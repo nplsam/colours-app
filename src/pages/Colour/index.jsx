@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
+import ColourForm from '../ColourForm'
 import './style.css'
 
 const Colour = () => {
@@ -16,9 +17,9 @@ const Colour = () => {
     { id: 10, name: 'Lime', hex: '#00FF00' },
   ];
 
-  const [colours, setColours] = useState(initialColors);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState('');
+  const [colours, setColours] = useState(initialColors)
+  const [loading, setLoading] = useState(false)
+  const [showForm, setShowForm] = useState(false)
 
   const renderColours = colours.map((el) => (
     <div key={el.id}>
@@ -28,14 +29,25 @@ const Colour = () => {
     </div>
   ));
 
+  const handleAddColourClick = () => {
+    setShowForm(true)
+  };
+
+  const addColourAndRedirect = (newColour) => {
+    setColours([newColour, ...colours]);
+    setShowForm(false)
+  };
+
   return (
     <div>
       <h2>Available Colors</h2>
+      <button onClick={handleAddColourClick}>Add New Colour</button>
       <div className="colours">
         {loading ? 'Loading...' : renderColours}
       </div>
+      {showForm && <ColourForm setShowForm={setShowForm} onSubmit={addColourAndRedirect} />}
     </div>
   );
 };
 
-export default Colour;
+export default Colour

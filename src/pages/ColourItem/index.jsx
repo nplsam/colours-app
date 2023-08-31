@@ -1,9 +1,9 @@
-import React from 'react';
-import { useParams } from 'react-router-dom';
+import React from 'react'
+import { useParams } from 'react-router-dom'
 import './style.css'
 
 const ColourItem = () => {
-  const { colour } = useParams();
+  const { colour } = useParams()
 
   const colourHex = {
     Red: '#FF0000',
