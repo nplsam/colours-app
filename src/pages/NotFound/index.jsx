@@ -7,7 +7,7 @@ const NotFound = () => {
   return (
     <>
       <h1>Page <span style={{ color: "darkblue" }}>{location.pathname}</span> not found</h1>
-      <Link to="/" style={{color: "darkblue", fontWeight: "bold"}}> Home Page &rarr;</Link>
+      <Link to="/colours" style={{color: "darkblue", fontWeight: "bold"}}> Colours Page &rarr;</Link>
     </>
   )
 }
