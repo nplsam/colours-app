@@ -12,7 +12,7 @@ const NavBar = () => {
 
   let activeStyle = {
     textDecoration: "underLine",
-    color: "lightpinkS"
+    color: "lightpink"
   }
 
   const navA = ({ isActive }) => (isActive ? activeStyle : undefined)
@@ -27,6 +27,7 @@ const NavBar = () => {
           <li><NavLink to="/colours" style={navA}>Colours</NavLink></li>
         </ul>
       </nav>
+      <Outlet />
     </>
   )
 }
