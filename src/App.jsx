@@ -1,8 +1,16 @@
 import React from 'react'
+import { NavBar } from './layout'
+import * as Pages from './pages'
+import './App.css'
 
 const App = () => {
   return (
-    <div>App</div>
+    <div className="App">
+      <NavBar />
+
+
+
+    </div>
   )
 }
 
